@@ -90,7 +90,7 @@ nav div a:hover::after {
 /* Hero section */
 #hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 90vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -243,7 +243,7 @@ nav div a:hover::after {
   width: 100%;
   min-width: 400px;
   min-height: 400px;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(122, 26, 26, 0.1);
   border: 4px solid var(--gold);
   background: #fff;
@@ -307,7 +307,7 @@ nav div a:hover::after {
   text-align: center;
   padding: 2rem;
   background: #fff;
-  border-radius: 1.25rem;
+  border-radius: 0.7rem;
   box-shadow: 0 4px 16px rgba(44, 32, 24, 0.08);
   transition: all 0.3s ease;
   flex-direction: column;
@@ -396,7 +396,7 @@ nav div a:hover::after {
 .vineyard-image img {
   width: 100%;
   min-width: 500px;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(122, 26, 26, 0.1);
   border: 4px solid var(--gold);
   background: #fff;
@@ -648,6 +648,80 @@ nav div a:hover::after {
   transform: translateY(-4px) scale(1.02);
 }
 
+/* Gallery section */
+
+.gallery-all {
+  text-align: center;
+  padding: 2rem 0;
+  background: #fff;
+}
+
+.gallery-all h2 {
+  font-size: 2.5rem;
+  color: var(--wine-red);
+}
+
+.gallery-all h3 {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.gallery-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  max-width: calc(33% - 5rem);
+  border: 3px solid var(--gold);
+}
+
+.gallery-content img {
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0,0,0,0.1) -4px -4px 8px inset, rgba(0,0,0,0.1) -4px -4px 8px inset;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom effect */
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay */
+.gallery-desc {
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 32, 24, 0.65); /* wine-dark vibe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-desc {
+  opacity: 1;
+}
+
+.gallery-desc p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
 @media (max-width: 1100px) {
   nav div {
     row-gap: 0.5rem;
@@ -848,5 +922,21 @@ nav div a:hover::after {
   }
   .slide-btn.next {
     left: 55%;
+  }
+
+  .gallery-all h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-all h3 {
+    font-size: 1.1rem;
+  }
+
+  .gallery-item {
+    max-width: calc(50% - 2rem);
+  }
+
+  .gallery-desc p {
+    font-size: 1rem;
   }
 }
