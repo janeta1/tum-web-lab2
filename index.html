@@ -215,6 +215,46 @@
           </div>
         </div>
       </section>
+
+      <section id="events">
+        <div class="events-all">
+          <h2>Evenimente</h2>
+          <h3>Momente memorabile petrecute împreună</h3>
+          <div class="events-content">
+            <div class="event-card">
+              <h4>Wine Grunge Party 2025</h4>
+              <p>
+                Wine Grunge Party de la Goldhaus a fost despre muzică, ritm și
+                vin bun. Pe 28 octombrie, alături de Petru Moiseev, show de tobe
+                și DJ, am petrecut o seară intensă, exact așa cum ne place, cu
+                vinurile Struguraș de la Grigoraș alături.
+              </p>
+              <div class="event-info">
+                <p><b>Data:</b> Octombrie 2025</p>
+                <p><b>Locație:</b> Goldhaus Bier & Steakhaus</p>
+              </div>
+              <h5>Galerie foto</h5>
+              <div class="event-slideshow">
+                <div class="event-track">
+                  <img src="images/gp1.jpg" alt="event1" class="event-img" />
+                  <img src="images/gp2.jpg" alt="event2" class="event-img" />
+                  <img src="images/gp3.jpg" alt="event3" class="event-img" />
+                  <img src="images/gp4.jpg" alt="event4" class="event-img" />
+                  <img src="images/gp5.jpg" alt="event5" class="event-img" />
+                  <img src="images/gp6.jpg" alt="event6" class="event-img" />
+                </div>
+                <button class="slide-btn prev" onclick="plusSlides(-1)">
+                  &#10094;
+                </button>
+                <button class="slide-btn next" onclick="plusSlides(1)">
+                  &#10095;
+                </button>
+              </div>
+            </div>
+            <!-- Other events in the future -->
+          </div>
+        </div>
+      </section>
       <section id="gallery"></section>
       <section id="contact"></section>
     </main>
@@ -244,6 +284,39 @@
       showSlides(slideIndex);
 
       setInterval(() => plusSlides(1), 5000);
+    </script>
+
+    <script>
+      const imagesPerSlide = 3; // Number of images to show per slide
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("event-img");
+        if (n > slides.length - imagesPerSlide + 1) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length - imagesPerSlide + 1;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = slideIndex - 1; i < slideIndex - 1 + imagesPerSlide; i++) {
+          slides[i].style.display = "block";
+        }
+      }
     </script>
   </body>
 </html>
