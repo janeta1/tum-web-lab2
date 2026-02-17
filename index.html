@@ -227,7 +227,7 @@
                 <p>Darul naturii în fiecare sticlă</p>
               </div>
             </div>
-            
+
             <div class="gallery-item">
               <img src="images/gl2.jpg" alt="gallery1" />
               <div class="gallery-desc">
@@ -265,7 +265,84 @@
           </div>
         </div>
       </section>
-      <section id="contact"></section>
+
+      <section id="contact">
+        <div class="contact-all">
+          <h2>Contactează-ne</h2>
+          <h3>
+            Vino să ne vizitezi sau trimite-ne un mesaj. Te așteptăm cu drag!
+          </h3>
+
+          <div class="contact-content">
+            <div class="contact-card contact-info">
+              <h4>Informații de contact</h4>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i
+                      class="fa-solid fa-map-marker-alt"
+                      aria-hidden="true"
+                    ></i>
+                    <b>Adresă:</b>
+                  </p>
+                </div>
+                <p class="info-value">Zgurița, Soroca, Republica Moldova</p>
+              </div>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <b>Telefon:</b>
+                  </p>
+                </div>
+                <p class="info-value">+373 0697 83 125</p>
+              </div>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <b>Email:</b>
+                  </p>
+                </div>
+                <p class="info-value">
+                  <a href="mailto:grigorashwinery@gmail.com" target="_blank"
+                    >contact@grigorashwinery.md</a
+                  >
+                </p>
+              </div>
+
+              <div class="divider" role="separator" aria-hidden="true"></div>
+              <p class="contact-quote">"Vinul bun se savurează în companie bună. Așteptăm cu nerăbdare să auzim de la tine!" </p>
+            </div>
+
+            <div class="contact-card contact-form">
+              <h4>Trimite-ne un mesaj</h4>
+              <p>Completează formularul și îți vom răspunde în curând</p>
+              <form id="contact-details" action="#" method="post" novalidate>
+                <label for="name">Nume complet *:</label>
+                <input id="name" name="name" type="text" placeholder="Ion Popescu" required />
+
+                <label for="email">Email *:</label>
+                <input id="email" name="email" type="email" placeholder="ion.popescu@exemplu.com" required />
+
+                <label for="phone">Telefon:</label>
+                <input id="phone" name="phone" type="tel" placeholder="+373 11 000 11"/>
+
+                <label for="message">Mesaj *:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Scrie-ne mesajul tău aici..."
+                  required
+                ></textarea>
+
+                <button type="button" class="btn primary" target="_blank">Trimite</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script>

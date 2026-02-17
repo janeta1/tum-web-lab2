@@ -325,12 +325,12 @@ nav div a:hover::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.5rem; 
+  width: 4.5rem;
   height: 4.5rem;
   font-size: 2.5rem;
-  background: rgba(139, 44, 44, 0.1); 
+  background: rgba(139, 44, 44, 0.1);
   color: #8b2c2c;
-  border-radius: 9999px; 
+  border-radius: 9999px;
   margin-bottom: 1rem;
 }
 
@@ -688,7 +688,9 @@ nav div a:hover::after {
 .gallery-content img {
   width: 100%;
   height: 100%;
-  box-shadow: rgba(0,0,0,0.1) -4px -4px 8px inset, rgba(0,0,0,0.1) -4px -4px 8px inset;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) -4px -4px 8px inset,
+    rgba(0, 0, 0, 0.1) -4px -4px 8px inset;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -720,6 +722,155 @@ nav div a:hover::after {
   font-style: italic;
   text-align: center;
   padding: 1rem;
+}
+
+.contact-all {
+  background: var(--cream);
+  padding: 4em 0;
+}
+
+.contact-all h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.1em;
+  color: var(--wine-red);
+  position: relative;
+  text-align: center;
+}
+
+.contact-all h3 {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: var(--text-muted);
+  padding: 0 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 2rem 1.5rem;
+}
+
+.contact-info {
+  background: var(--wine-red);
+  color: #fff;
+  padding: 2rem;
+}
+
+.contact-info h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 1.1rem 0;
+  color: rgba(255, 255, 255, 0.95);
+  flex-direction: column;
+}
+
+.info-item i {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  min-width: 32px;
+}
+
+.label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.info-value {
+  padding-left: 2.2rem; /* align with label text, leaving space for icon */
+}
+
+.info-value a {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+}
+
+.divider {
+  height: 2px;
+  background: rgba(234, 172, 172, 0.722);
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.contact-quote {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(208, 202, 202, 0.95);
+  align-items: center;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 80%;
+}
+
+.contact-form {
+  padding: 2.25rem;
+}
+
+.contact-form h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--wine-red);
+}
+
+.contact-form p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form form {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  color: var(--wine-red);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(122, 26, 26, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-dark);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 20px;
+  max-height: 80px;
+  resize: vertical;
+}
+
+@media (min-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -867,12 +1018,14 @@ nav div a:hover::after {
     text-align: center;
   }
 
-  .events-all h2 {
+  .events-all h2,
+  .contact-all h2 {
     font-size: 2rem;
     text-align: center;
   }
 
-  .events-all h3 {
+  .events-all h3,
+  .contact-all h3 {
     font-size: 1.1rem;
     text-align: center;
   }
@@ -938,5 +1091,38 @@ nav div a:hover::after {
 
   .gallery-desc p {
     font-size: 1rem;
+  }
+
+  .contact-card {
+    margin: 0 1rem 0;
+  }
+
+  .contact-form {
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+  }
+
+  .contact-info {
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+  }
+
+  .contact-info h4,
+  .contact-form h4 {
+    font-size: 1.2rem;
+  }
+
+  .label,
+  .info-value,
+  .contact-form p,
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-quote {
+    font-size: 0.8rem;
   }
 }
