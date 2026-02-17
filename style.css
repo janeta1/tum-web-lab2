@@ -867,9 +867,128 @@ nav div a:hover::after {
   resize: vertical;
 }
 
+.site-footer {
+  background: var(--wine-dark);
+  color: #fff;
+  padding: 3rem 1.5rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  font-family: inherit;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.6rem;
+  font-family: inherit;
+}
+
+.social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.286);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.footer-nav {
+  display: block;
+  margin-left: 2rem;
+}
+
+.footer-nav h4 {
+  margin-top: -1.2rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.footer-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-item {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0.65rem 0;
+}
+
+.footer-item i {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  width: 28px;
+}
+
+.footer-item a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 1.75rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1rem;
+}
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+.footer-disclaimer {
+  text-align: right;
+}
+
 @media (min-width: 900px) {
   .contact-content {
     grid-template-columns: 1fr 2fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1124,5 +1243,21 @@ nav div a:hover::after {
 
   .contact-quote {
     font-size: 0.8rem;
+  }
+
+  .footer-nav {
+    margin-left: 0;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .footer-disclaimer {
+    text-align: left;
   }
 }
