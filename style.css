@@ -469,14 +469,14 @@ nav div a:hover::after {
   padding: 2rem 1.5rem;
   border-radius: 1.25rem;
   box-shadow: 0 4px 16px rgba(122, 26, 26, 0.08);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   text-align: center;
 }
 
-.event-card:hover {
+/* .event-card:hover {
   box-shadow: 0 8px 32px rgba(122, 26, 26, 0.16);
   transform: translateY(-4px) scale(1.02);
-}
+} */
 
 .event-card h4 {
   font-size: 2rem;
@@ -612,7 +612,7 @@ nav div a:hover::after {
   padding: 2rem 1.5rem;
   border-radius: 1.25rem;
   box-shadow: 0 4px 16px rgba(122, 26, 26, 0.08);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   width: 100%;
   box-sizing: border-box;
   text-align: center;
@@ -643,10 +643,10 @@ nav div a:hover::after {
   gap: 2rem;
 }
 
-.events-cta:hover .events-cta-text {
+/* .events-cta:hover .events-cta-text {
   box-shadow: 0 8px 32px rgba(122, 26, 26, 0.16);
   transform: translateY(-4px) scale(1.02);
-}
+} */
 
 /* Gallery section */
 
@@ -800,6 +800,13 @@ nav div a:hover::after {
 
 .info-value {
   padding-left: 2.2rem; /* align with label text, leaving space for icon */
+}
+
+.info-note {
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+  padding-left: 2.2rem; /* align with label text, leaving space for icon */
+  color: rgba(208, 202, 202, 0.95);
 }
 
 .info-value a {
