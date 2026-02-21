@@ -90,7 +90,7 @@ nav div a:hover::after {
 /* Hero section */
 #hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 91vh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -386,8 +386,7 @@ nav div a:hover::after {
 
 .vineyard-image {
   flex: 2;
-  min-width: 400px;
-  max-width: 600px;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,7 +394,7 @@ nav div a:hover::after {
 
 .vineyard-image img {
   width: 100%;
-  min-width: 500px;
+  max-width: 100%;
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(122, 26, 26, 0.1);
   border: 4px solid var(--gold);
@@ -511,92 +510,52 @@ nav div a:hover::after {
   text-align: center;
 }
 
-/* Photo slideshow (buttons + imgs) */
+/* Photo slideshow*/
 .event-slideshow {
-  position: relative;
+  overflow: visible;
   width: 100%;
-  max-width: 100%; /* keep slideshow within parent width */
-  margin: 2rem auto 4.5rem; /* leave room below for controls */
-  overflow: visible; /* allow controls to sit outside the image area */
+  display: grid;
+  grid-template-areas:
+    "scroll scroll scroll"
+    "prev markers next";
+  grid-template-columns: auto 1fr auto;
 }
 
-/* Only for imgs */
 .event-track {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  justify-content: center;
   gap: 2rem;
   padding: 1rem 0;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none; /* IE, Edge */
-  scrollbar-width: none; /* Firefox */
+  grid-area: scroll;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: 2rem auto 1rem;
+  display: flex;
+}
+
+.content {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 38vw;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.content li {
+  list-style-type: none;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .event-img {
   width: 100%;
-  align-items: center;
-  max-width: 50%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 16px rgba(122, 26, 26, 0.1);
-  background: #fff;
-}
-
-/* Only buttons: sit entirely under the slideshow (outside the image) */
-.slide-btn {
-  position: absolute;
-  bottom: -48px; /* sit completely under the image */
-  transform: none;
-  background: linear-gradient(
-    135deg,
-    rgba(122, 26, 26, 0.98),
-    rgba(74, 14, 14, 0.98)
-  );
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.35rem;
-  z-index: 6;
-  box-shadow: 0 14px 30px rgba(44, 32, 24, 0.18);
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    background 220ms ease;
-  position: absolute;
-}
-
-.slide-btn::before {
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 6px rgba(186, 149, 106, 0.06);
-  pointer-events: none;
-}
-
-.slide-btn:hover {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 22px 40px rgba(44, 32, 24, 0.22);
-}
-
-/* center both buttons under the slide area, offset from center */
-.slide-btn.prev {
-  left: 40%;
-}
-
-.slide-btn.next {
-  left: 55%;
 }
 
 /* CSS for the bottom part of the events section */
@@ -1156,8 +1115,8 @@ nav div a:hover::after {
     text-align: center;
   }
 
-  .event-img {
-    max-width: 70%;
+  .content {
+    grid-auto-columns: 50vw;
   }
 
   .events-cta {
