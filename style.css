@@ -37,6 +37,16 @@ nav {
   align-items: center;
 }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  width: 100px;
+  margin-left: 2rem;
+}
+
 .nav-link {
   font-size: 1.4rem;
   padding-left: 2rem;
@@ -59,7 +69,7 @@ nav {
   padding-left: 2rem;
 }
 
-nav div a {
+.div-links a {
   color: var(--text-dark);
   font-size: 1rem;
   transition: color 0.3s ease;
@@ -67,12 +77,12 @@ nav div a {
   text-decoration: none;
 }
 
-nav div a:hover {
+.div-links a:hover {
   color: var(--wine-red);
 }
 
 /* Underline effect on hover */
-nav div a::after {
+.div-links a::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -83,7 +93,7 @@ nav div a::after {
   transition: width 0.3s ease;
 }
 
-nav div a:hover::after {
+.div-links a:hover::after {
   width: 100%;
 }
 
@@ -939,11 +949,13 @@ nav div a:hover::after {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding-top: 1rem;
 }
+
 .footer-bottom p {
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
 }
+
 .footer-disclaimer {
   text-align: right;
 }
@@ -959,6 +971,7 @@ nav div a:hover::after {
 }
 
 @media (max-width: 1100px) {
+  
   nav div {
     row-gap: 0.5rem;
     column-gap: 0.5rem;
@@ -970,7 +983,22 @@ nav div a:hover::after {
     width: 100%;
     text-align: center;
     padding-left: 0;
-    margin: 0;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-logo {
+    margin-left: 0;
+    margin-bottom: 0;
   }
 
   .div-links {
