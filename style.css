@@ -3,9 +3,118 @@
   --wine-red: #7a1a1a;
   --wine-dark: #4a0e0e;
   --gold: #b8956a;
-  --cream: #f8f5f0;
+
+  --cream: #f8f5f0; /* page background */
+  --white: #ffffff; /* cards background */
+
   --text-dark: #2c2018;
   --text-muted: #6b5d52;
+
+  --border-light: rgba(122, 26, 26, 0.12);
+  --shadow-soft: rgba(44, 32, 24, 0.08);
+}
+
+body.dark-mode {
+  --cream: #18100c;
+  --white: #2d1a13; /* slightly lighter for cards */
+  --wine-red: #a86c4b;
+  --wine-dark: #3b2317;
+  --gold: #e0b97a;
+  --text-dark: #f3e6d8;
+  --text-muted: #bfa58a;
+  --border-light: rgba(224, 185, 122, 0.13);
+  --shadow-soft: rgba(44, 32, 24, 0.45);
+}
+
+/* Section backgrounds and cards in dark mode */
+body.dark-mode #about,
+body.dark-mode #events,
+body.dark-mode #gallery,
+body.dark-mode .contact-all {
+  background: var(--cream);
+}
+
+body.dark-mode .about-values > div {
+  background: #3b2317;
+  color: var(--text-dark);
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  border: 1.5px solid #4a2c1a;
+}
+
+body.dark-mode .about-values i {
+  background: rgba(224, 185, 122, 0.13);
+  color: var(--gold);
+}
+
+body.dark-mode .about-values h3 {
+  color: var(--gold);
+}
+
+body.dark-mode .about-values p {
+  color: var(--text-dark);
+}
+
+body.dark-mode .about-text h2,
+body.dark-mode .vineyard-all h2,
+body.dark-mode .events-all h2,
+body.dark-mode .gallery-all h2,
+body.dark-mode .contact-all h2 {
+  color: var(--gold);
+}
+
+body.dark-mode .about-values h3,
+body.dark-mode .event-card h4,
+body.dark-mode .events-cta-text h2,
+body.dark-mode .gallery-all h2,
+body.dark-mode .contact-all h2 {
+  color: var(--gold);
+}
+
+body.dark-mode .about-values p,
+body.dark-mode .event-card p,
+body.dark-mode .events-cta-text p,
+body.dark-mode .gallery-all h3,
+body.dark-mode .contact-all h3 {
+  color: var(--text-muted);
+}
+
+body.dark-mode .event-card .event-info p {
+  color: var(--wine-red);
+}
+
+body.dark-mode .btn.primary {
+  background-color: var(--wine-red);
+  color: var(--text-dark);
+  border: 2px solid var(--wine-red);
+}
+
+body.dark-mode .btn.primary:hover {
+  background-color: var(--wine-dark);
+  border-color: var(--wine-dark);
+}
+
+body.dark-mode .btn.secondary {
+  background: var(--cream);
+  color: var(--wine-red);
+  border: 2px solid var(--white);
+}
+
+body.dark-mode .btn.secondary:hover {
+  background: var(--white);
+  color: var(--wine-red);
+}
+
+body.dark-mode .gallery-desc {
+  background: rgba(59, 35, 23, 0.85);
+}
+
+body.dark-mode .gallery-desc p {
+  color: var(--gold);
+}
+
+body.dark-mode .contact-info {
+  background: var(--wine-red);
+  color: var(--text-dark);
 }
 
 html {
@@ -17,6 +126,20 @@ body {
   color: var(--text-dark);
   background-color: var(--cream);
   line-height: 1.6;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--wine-red);
+  cursor: pointer;
+  margin-right: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.2);
 }
 
 header {
@@ -256,7 +379,7 @@ nav {
   border-radius: 0.5rem;
   box-shadow: 0 4px 24px rgba(122, 26, 26, 0.1);
   border: 4px solid var(--gold);
-  background: #fff;
+  background: var(--white);
   transition: transform 0.2s;
 }
 
@@ -316,9 +439,9 @@ nav {
 .about-values > div {
   text-align: center;
   padding: 2rem;
-  background: #fff;
+  background: var(--white);
   border-radius: 0.7rem;
-  box-shadow: 0 4px 16px rgba(44, 32, 24, 0.08);
+  box-shadow: 0 4px 16px var(--shadow-soft);
   transition: all 0.3s ease;
   flex-direction: column;
   align-items: center;
@@ -335,12 +458,12 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.5rem; 
+  width: 4.5rem;
   height: 4.5rem;
   font-size: 2.5rem;
-  background: rgba(139, 44, 44, 0.1); 
-  color: #8b2c2c;
-  border-radius: 9999px; 
+  background: rgba(139, 44, 44, 0.1);
+  color: var(--wine-red);
+  border-radius: 9999px;
   margin-bottom: 1rem;
 }
 
@@ -357,7 +480,7 @@ nav {
 }
 
 #vineyard {
-  background: #fff;
+  background: var(--white);
   padding: 4em 0;
 }
 
@@ -406,9 +529,9 @@ nav {
   width: 100%;
   max-width: 100%;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 24px rgba(122, 26, 26, 0.1);
+  box-shadow: 0 4px 24px var(--border-light);
   border: 4px solid var(--gold);
-  background: #fff;
+  background: var(--white);
   transition: transform 0.2s;
 }
 
@@ -474,10 +597,10 @@ nav {
 
 /* One single event */
 .event-card {
-  background: #fff;
+  background: var(--white);
   padding: 2rem 1.5rem;
   border-radius: 1.25rem;
-  box-shadow: 0 4px 16px rgba(122, 26, 26, 0.08);
+  box-shadow: 0 4px 16px var(--shadow-soft);
   /* transition: all 0.3s ease; */
   text-align: center;
 }
@@ -503,7 +626,7 @@ nav {
 
 .event-card .event-info p {
   font-size: 0.9rem;
-  color: #854b4f;
+  color: var(--wine-red);
   text-align: left;
   margin-bottom: 0;
 }
@@ -577,10 +700,10 @@ nav {
 }
 
 .events-cta-text {
-  background: #fff;
+  background: var(--white);
   padding: 2rem 1.5rem;
   border-radius: 1.25rem;
-  box-shadow: 0 4px 16px rgba(122, 26, 26, 0.08);
+  box-shadow: 0 4px 16px var(--shadow-soft);
   /* transition: all 0.3s ease; */
   width: 100%;
   box-sizing: border-box;
@@ -622,7 +745,7 @@ nav {
 .gallery-all {
   text-align: center;
   padding: 2rem 0;
-  background: #fff;
+  background: var(--white);
 }
 
 .gallery-all h2 {
@@ -686,7 +809,7 @@ nav {
 }
 
 .gallery-desc p {
-  color: #fff;
+  color: var(--white);
   font-size: 1.2rem;
   font-style: italic;
   text-align: center;
@@ -729,13 +852,13 @@ nav {
 }
 
 .contact-card {
-  background: #fff;
+  background: var(--white);
   padding: 2rem 1.5rem;
 }
 
 .contact-info {
   background: var(--wine-red);
-  color: #fff;
+  color: var(--white);
   padding: 2rem;
 }
 
@@ -831,7 +954,7 @@ nav {
   margin-bottom: 1.5rem;
   border: 1px solid rgba(122, 26, 26, 0.12);
   border-radius: 8px;
-  background: #fff;
+  background: var(--white);
   color: var(--text-dark);
   font-family: inherit;
   box-sizing: border-box;
@@ -845,7 +968,7 @@ nav {
 
 .site-footer {
   background: var(--wine-dark);
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
   padding: 3rem 1.5rem;
 }
 
@@ -886,7 +1009,7 @@ nav {
   height: 50px;
   background: rgba(255, 255, 255, 0.286);
   border-radius: 50%;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 2rem;
 }
@@ -971,7 +1094,6 @@ nav {
 }
 
 @media (max-width: 1100px) {
-  
   nav div {
     row-gap: 0.5rem;
     column-gap: 0.5rem;

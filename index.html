@@ -9,13 +9,20 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-   Light />
+      Light
+    />
   </head>
   <body>
     <header>
       <nav>
         <div class="nav-brand">
-          <a href="#hero"><img src="images/logo_red.png" alt="Grigoraș Wine Logo" class="site-logo" /></a>
+          <a href="#hero"
+            ><img
+              src="images/logo_red.png"
+              alt="Grigoraș Wine Logo"
+              class="site-logo"
+              id="siteLogo"
+          /></a>
           <a href="#hero" class="nav-link">Struguraș de la Grigoraș</a>
         </div>
         <div class="div-links">
@@ -24,6 +31,9 @@
           <a href="#events">Evenimente</a>
           <a href="#gallery">Galerie</a>
           <a href="#contact">Contactează-ne</a>
+          <button id="darkToggle" class="dark-toggle">
+            <i class="fa-regular fa-moon"></i>
+          </button>
         </div>
       </nav>
     </header>
@@ -175,12 +185,48 @@
               <div class="event-slideshow">
                 <div class="event-track">
                   <ul class="content">
-                    <li><img src="images/gp1.jpg" alt="event1" class="event-img" /></li>
-                    <li><img src="images/gp2.jpg" alt="event2" class="event-img" /></li>
-                    <li><img src="images/gp3.jpg" alt="event3" class="event-img" /></li>
-                    <li><img src="images/gp4.jpg" alt="event4" class="event-img" /></li>
-                    <li><img src="images/gp5.jpg" alt="event5" class="event-img" /></li>
-                    <li><img src="images/gp6.jpg" alt="event6" class="event-img" /></li>
+                    <li>
+                      <img
+                        src="images/gp1.jpg"
+                        alt="event1"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="images/gp2.jpg"
+                        alt="event2"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="images/gp3.jpg"
+                        alt="event3"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="images/gp4.jpg"
+                        alt="event4"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="images/gp5.jpg"
+                        alt="event5"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="images/gp6.jpg"
+                        alt="event6"
+                        class="event-img"
+                      />
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -454,6 +500,37 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      const toggle = document.getElementById("darkToggle");
+      const logo = document.getElementById("siteLogo");
+
+      function updateTheme() {
+        const isDark = document.body.classList.contains("dark-mode");
+
+        if (isDark) {
+          logo.src = "images/logo_white.png";
+          localStorage.setItem("theme", "dark");
+          toggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
+        } else {
+          logo.src = "images/logo_red.png";
+          localStorage.setItem("theme", "light");
+          toggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+        }
+      }
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        updateTheme();
+      });
+
+      // Load saved theme
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+
+      updateTheme();
+    </script>
 
     <!-- <script>
       let slideIndex = 0;
