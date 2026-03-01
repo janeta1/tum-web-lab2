@@ -104,7 +104,6 @@ Check the live landing page here: [Struguraș de la Grigoraș](https://janeta1.g
 - Slide-down animated navigation menu with smooth transitions
 - Mobile-specific dark mode toggle within the menu
 - Auto-closes when clicking navigation links
-- Proper accessibility with `inert` attribute
 
 ### 🍇 Mascot
 
@@ -122,4 +121,25 @@ Check the live landing page here: [Struguraș de la Grigoraș](https://janeta1.g
 - Migrated multiple sections to Tailwind utility classes: About, Vineyard, Events, and Footer sections (grid layouts, responsive columns, typography, spacing)
 - Dark mode support configured to work with existing dark/light mode toggle
 
+### 📸 Screenshots
 
+#### Mobile view
+
+<p float="left">
+    <img src="screenshots/mobile_light.png" alt="Hero Section - Light Mode" height="350px"/>
+    <img src="screenshots/mobile_dark.png" alt="Hero Section - Dark Mode" height="350px" />
+</p>
+
+#### Tablet view
+
+<p float="left">
+    <img src="screenshots/tablet_light.png" alt="Hero Section - Light Mode" height="250px" />
+    <img src="screenshots/tablet_dark.png" alt="Hero Section - Dark Mode" height="250px" />
+</p>
+
+#### Desktop view
+
+<p float="left">
+    <img src="screenshots/desktop_light.png" alt="Hero Section - Light Mode" width="45%" />
+    <img src="screenshots/desktop_dark.png" alt="Hero Section - Dark Mode" width="45%" />
+</p>
