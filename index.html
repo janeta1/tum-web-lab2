@@ -500,6 +500,13 @@
       </div>
     </footer>
 
+    <div id="mascot-wrapper">
+      <img id="mascot" src="images/mascot.svg" alt="Mascot" />
+      <div id="mascot-text">
+        Mesajul tău e ca un vin bun: abia aștept să-l descopăr!
+      </div>
+    </div>
+
     <script>
       const toggle = document.getElementById("darkToggle");
       const logo = document.getElementById("siteLogo");
@@ -529,6 +536,32 @@
       }
 
       updateTheme();
+
+      (function () {
+        const wrapper = document.getElementById("mascot-wrapper");
+        const img = document.getElementById("mascot");
+
+        if (!wrapper || !img) return;
+
+        // delay before showing (ms) — adjust as desired
+        const APPEAR_DELAY = 2200;
+        setTimeout(() => wrapper.classList.add("visible"), APPEAR_DELAY);
+
+        wrapper.addEventListener("click", () => {
+          // scroll to #contact
+          const target = document.querySelector("#contact");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          // small jump animation for attention
+          img.style.animation = "mascot-jump .6s ease";
+          setTimeout(
+            () =>
+              (img.style.animation = "mascot-float 4s ease-in-out infinite"),
+            700,
+          );
+        });
+      })();
     </script>
 
     <!-- <script>
