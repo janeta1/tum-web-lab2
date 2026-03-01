@@ -38,7 +38,7 @@ This is a landing page for Struguraș de la Grigoraș, a small family winery in 
 
 <p float="left">
     <img src="screenshots/vineyard_light.png" alt="Vineyard Section - Light Mode" width="45%" />
-    <img src="screenshots/vineyard_dark.png" alt="Vineyard Section - Dark Mode" width="45%" />
+    <img src="screenshots/vineyard_dark.png" alt="Vine✨yard Section - Dark Mode" width="45%" />
 </p>
 
 ### Events section
@@ -86,5 +86,40 @@ Check the live landing page here: [Struguraș de la Grigoraș](https://janeta1.g
 - **Frontend:** HTML, CSS, Vanilla JS
 - **Icons:** Font Awesome
 - **Hosting:** GitHub Pages
+
+---
+
+## 🚀 Lab 3 - Responsive Design & Animations
+
+### ✨Responsive Design
+
+- All elements adjusted for desktop/mobile/tablet viewports
+- Fixed visualization issues: horizontal overflow, text wrapping, sticky header positioning
+- Responsive breakpoints: 480px (mobile), 768px (tablet), 1100px (desktop)
+- Call to action buttons remain visible and accessible on all screen sizes
+
+### 📱Mobile-Only Elements
+
+- Hamburger menu toggle: Appears only on mobile view (≤768px)
+- Slide-down animated navigation menu with smooth transitions
+- Mobile-specific dark mode toggle within the menu
+- Auto-closes when clicking navigation links
+- Proper accessibility with `inert` attribute
+
+### 🍇 Mascot
+
+- Grape-themed SVG mascot related to winery topic
+- Friendly, cartoon-style design matching the wine color palette
+- Appears after 2.2 seconds delay at bottom-right corner
+- Animated with continuous floating motion and subtle rotation
+- Jump animation triggers on click, scrolling to contact form
+- Hover message displays: *"Mesajul tău e ca un vin bun: abia aștept să-l descopăr!"*
+
+### 🎨 CSS Framework Migration
+
+- Integrated TailwindCSS via CDN
+- Configured custom color palette using CSS variables for theme switching
+- Migrated multiple sections to Tailwind utility classes: About, Vineyard, Events, and Footer sections (grid layouts, responsive columns, typography, spacing)
+- Dark mode support configured to work with existing dark/light mode toggle
 
 
