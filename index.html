@@ -34,6 +34,39 @@
             <i class="fa-regular fa-moon"></i>
           </button>
         </div>
+
+        <!-- Menu for mobile view -->
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Deschide meniul"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="mobile-menu" id="mobileMenu" inert>
+          <div class="mobile-menu-header">
+            <div class="mobile-menu-actions">
+              <button id="mobileDarkToggle" class="dark-toggle">
+                <i class="fa-regular fa-moon"></i>
+              </button>
+              <button
+                id="mobileMenuClose"
+                class="menu-close"
+                aria-label="Închide meniul"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mobile-nav">
+            <a href="#about" class="mobile-nav-link">Despre noi</a>
+            <a href="#vineyard" class="mobile-nav-link">Vinificație</a>
+            <a href="#events" class="mobile-nav-link">Evenimente</a>
+            <a href="#gallery" class="mobile-nav-link">Galerie</a>
+            <a href="#contact" class="mobile-nav-link">Contactează-ne</a>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -509,7 +542,11 @@
 
     <script>
       const toggle = document.getElementById("darkToggle");
+      const mobileToggle = document.getElementById("mobileDarkToggle");
       const logo = document.getElementById("siteLogo");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const close = document.getElementById("mobileMenuClose");
 
       function updateTheme() {
         const isDark = document.body.classList.contains("dark-mode");
@@ -518,10 +555,12 @@
           logo.src = "images/logo_white.png";
           localStorage.setItem("theme", "dark");
           toggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
+          mobileToggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
         } else {
           logo.src = "images/logo_red.png";
           localStorage.setItem("theme", "light");
           toggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+          mobileToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
         }
       }
 
@@ -530,10 +569,38 @@
         updateTheme();
       });
 
+      mobileToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        updateTheme();
+      });
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("open");
+        mobileMenu.removeAttribute("inert");
+      });
+
+      close.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("inert", "");
+      });
+
+      mobileMenu.querySelectorAll(".mobile-nav-link").forEach((link) =>
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          mobileMenu.setAttribute("inert", "");
+        }),
+      );
+
       // Load saved theme
       if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
+      } else if (
+        !localStorage.getItem("theme") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.body.classList.add("dark-mode");
       }
+      updateTheme();
 
       updateTheme();
 
