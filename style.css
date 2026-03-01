@@ -26,6 +26,115 @@ body.dark-mode {
   --shadow-soft: rgba(44, 32, 24, 0.45);
 }
 
+/* Mascot */
+#mascot-wrapper {
+  position: fixed;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95) rotate(-6deg);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  user-select: none;
+  bottom: 18px;
+  right: 18px;
+}
+
+/* image */
+#mascot {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* visible state after delay */
+#mascot-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
+/* gentle floating + subtle tilt */
+@keyframes mascot-float {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+}
+#mascot-wrapper.visible #mascot {
+  animation: mascot-float 4s ease-in-out infinite;
+}
+
+/* playful jump / attention pulse (triggered on earnt-hover via JS class or on hover) */
+@keyframes mascot-jump {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-14px) scale(1.03);
+  }
+  60% {
+    transform: translateY(0) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Message */
+#mascot-text {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 20%;
+  background: var(--white);
+  color: var(--text-dark);
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  opacity: 0;
+  min-width: 120px;
+}
+
+/* arrow under message box */
+#mascot-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--white);
+}
+
+/* show tooltip on hover */
+#mascot-wrapper:hover #mascot-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* smaller on tiny screens */
+@media (max-width: 480px) {
+  #mascot-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+  #mascot-text {
+    font-size: 10px;
+    padding: 6px 8px;
+    min-width: 90px;
+  }
+}
+
 /* Section backgrounds and cards in dark mode */
 body.dark-mode #about,
 body.dark-mode #events,
@@ -1167,6 +1276,9 @@ nav {
 
   .about-image {
     padding: 0 1em;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .about-image img {
@@ -1176,10 +1288,17 @@ nav {
     min-height: 0;
   }
 
+  .about-text {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
   .about-text p {
     max-width: 100%;
     min-width: 0;
-    padding: 0 1rem;
+    padding: 0 2.5rem;
     font-size: 1.1rem;
     text-indent: 1.1em;
   }
@@ -1191,6 +1310,7 @@ nav {
 
   .about-end {
     padding: 2rem 3.5rem 1rem 3.5rem;
+    box-sizing: border-box;
   }
 
   .about-values {
@@ -1233,12 +1353,15 @@ nav {
 
   .vineyard-text {
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 2.5rem;
   }
 
   .vineyard-text p {
     max-width: 100%;
     min-width: 0;
-    padding: 0 1rem;
+    padding: 0;
     font-size: 1.1rem;
     text-indent: 1.1em;
   }
@@ -1267,6 +1390,7 @@ nav {
 
   .content {
     grid-auto-columns: 50vw;
+    max-width: 100%;
   }
 
   .events-cta {
@@ -1375,5 +1499,12 @@ nav {
   }
   .footer-disclaimer {
     text-align: left;
+  }
+
+  .about-content,
+  .events-all,
+  .event-track {
+    max-width: 100%;
+    overflow: hidden;
   }
 }
