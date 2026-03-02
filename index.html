@@ -324,7 +324,9 @@
             Momente memorabile petrecute împreună
           </h3>
 
-          <div class="events-content grid grid-cols-1 gap-8 mt-8 max-w-[1200px] mx-auto">
+          <div
+            class="events-content grid grid-cols-1 gap-8 mt-8 max-w-[1200px] mx-auto"
+          >
             <div
               class="event-card text-center rounded-[1.25rem] p-8 px-6"
               style="
@@ -419,7 +421,9 @@
           </div>
         </div>
 
-        <div class="events-cta max-w-[1200px] w-full mx-auto my-8 px-[1.5rem] box-border">
+        <div
+          class="events-cta max-w-[1200px] w-full mx-auto my-8 px-[1.5rem] box-border"
+        >
           <div
             class="events-cta-text w-full text-center rounded-[1.25rem] p-8 px-6 box-border"
             style="
@@ -456,9 +460,14 @@
       </section>
 
       <section id="gallery">
-        <div class="gallery-all text-center py-8" style="background-color: var(--white)">
+        <div
+          class="gallery-all text-center py-8"
+          style="background-color: var(--white)"
+        >
           <h2 class="text-4xl" style="color: var(--wine-red)">Galerie</h2>
-          <h3 class="text-lg" style="color: var(--text-muted)">Povestea noastră în imagini</h3>
+          <h3 class="text-lg" style="color: var(--text-muted)">
+            Povestea noastră în imagini
+          </h3>
 
           <div class="gallery-content">
             <div class="gallery-item">
@@ -813,8 +822,8 @@
         if (!wrapper || !img) return;
 
         // delay before showing (ms) — adjust as desired
-        const APPEAR_DELAY = 2200;
-        setTimeout(() => wrapper.classList.add("visible"), APPEAR_DELAY);
+        // const APPEAR_DELAY = 2200;
+        // setTimeout(() => wrapper.classList.add("visible"), APPEAR_DELAY);
 
         wrapper.addEventListener("click", () => {
           // scroll to #contact

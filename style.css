@@ -26,6 +26,11 @@ body.dark-mode {
   --shadow-soft: rgba(44, 32, 24, 0.45);
 }
 
+@keyframes mascot-entrance {
+  from { opacity: 0; transform: translateY(12px) scale(0.95) rotate(-6deg); }
+  to   { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
 /* Mascot */
 #mascot-wrapper {
   position: fixed;
@@ -35,15 +40,16 @@ body.dark-mode {
   pointer-events: auto;
   opacity: 0;
   transform: translateY(12px) scale(0.95) rotate(-6deg);
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
   display: grid;
   place-items: center;
   gap: 6px;
   user-select: none;
+  /* top: 18px; */
   bottom: 18px;
   right: 18px;
+  /* left: 18px; */
+  /* entrance animation with 2.2s delay */
+  animation: mascot-entrance 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) 2.2s both;
 }
 
 /* image */
@@ -51,6 +57,7 @@ body.dark-mode {
   width: 100%;
   height: 100%;
   cursor: pointer;
+  animation: mascot-float 4s ease-in-out 2.65s infinite;
 }
 
 /* visible state after delay */
@@ -75,7 +82,7 @@ body.dark-mode {
   animation: mascot-float 4s ease-in-out infinite;
 }
 
-/* playful jump / attention pulse (triggered on earnt-hover via JS class or on hover) */
+/* playful jump / attention pulse*/
 @keyframes mascot-jump {
   0% {
     transform: translateY(0) scale(1);
