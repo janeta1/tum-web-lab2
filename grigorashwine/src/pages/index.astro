@@ -1,12 +1,13 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro'
-import Hero from '../components/Hero.astro'
-import About from '../components/About.astro'
-import Vineyard from '../components/Vineyard.astro'
-import Events from '../components/Events.astro'
-import Gallery from '../components/Gallery.astro'
-import Contact from '../components/Contact.astro'
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Vineyard from "../components/Vineyard.astro";
+import Events from "../components/Events.astro";
+import Gallery from "../components/Gallery.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -15,134 +16,24 @@ import Contact from '../components/Contact.astro'
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Struguraș de la Grigoraș</title>
-    
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    
   </head>
   <body>
-    
-	<Header />
+    <Header />
     <main>
       <Hero />
       <About />
-	  <Vineyard />
-	  <Events />
-	  <Gallery />
-	  <Contact />
+      <Vineyard />
+      <Events />
+      <Gallery />
+      <Contact />
     </main>
 
-    <footer
-      class="py-12 px-6"
-      style="
-        background-color: var(--wine-dark);
-        color: rgba(255, 255, 255, 0.9);
-      "
-    >
-      <div
-class="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-start md:grid-cols-3" style="align-items: start"      >
-        <div>
-          <h3 class="text-2xl font-semibold mb-2">Struguraș de la Grigoraș</h3>
-          <p class="text-white/90 mb-2">
-            Vin de casă tradițional din inima Moldovei. Pasiune și grijă în
-            fiecare sticlă.
-          </p>
-          <div class="mt-4 flex gap-2">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              aria-label="Facebook"
-              class="inline-flex items-center justify-center w-12 h-12 bg-white/30 rounded-full text-white/90 text-2xl no-underline"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              aria-label="Instagram"
-              class="inline-flex items-center justify-center w-12 h-12 bg-white/30 rounded-full text-white/90 text-2xl no-underline"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a
-              href="mailto:grigorashwinery@gmail.com"
-              aria-label="Email"
-              class="inline-flex items-center justify-center w-12 h-12 bg-white/30 rounded-full text-white/90 text-2xl no-underline"
-              ><i class="fa-regular fa-envelope"></i
-            ></a>
-          </div>
-        </div>
-
-        <nav class="footer-nav block max-w-full box-border ml-8">
-          <h4 class="text-xl mb-3">Navigare</h4>
-          <ul class="list-none p-0 m-0 flex flex-col gap-2">
-            <li>
-              <a href="#hero" class="text-white/90 no-underline">→ Acasă</a>
-            </li>
-            <li>
-              <a href="#about" class="text-white/90 no-underline"
-                >→ Despre noi</a
-              >
-            </li>
-            <li>
-              <a href="#vineyard" class="text-white/90 no-underline"
-                >→ Vinificație</a
-              >
-            </li>
-            <li>
-              <a href="#events" class="text-white/90 no-underline"
-                >→ Evenimente</a
-              >
-            </li>
-            <li>
-              <a href="#gallery" class="text-white/90 no-underline"
-                >→ Galerie</a
-              >
-            </li>
-            <li>
-              <a href="#contact" class="text-white/90 no-underline"
-                >→ Contactează-ne</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <div>
-          <h4 class="text-xl mb-3">Contactează-ne</h4>
-          <div class="flex gap-2 items-start my-2">
-            <i class="fa-solid fa-location-dot text-white/90 w-7"></i>
-            <div class="text-white/90">
-              Strada Independenței 5, Zgurița, Soroca,<br />Republica Moldova
-            </div>
-          </div>
-          <div class="flex gap-2 items-start my-2">
-            <i class="fa-solid fa-phone text-white/90 w-7"></i>
-            <div class="text-white/90">+373 60 123 456</div>
-          </div>
-          <div class="flex gap-2 items-start my-2">
-            <i class="fa-regular fa-envelope text-white/90 w-7"></i>
-            <div class="text-white/90">
-              <a
-                href="mailto:grigorashwinery@gmail.com"
-                class="text-white/90 no-underline"
-                >grigorashwinery@gmail.com</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="max-w-6xl mx-auto mt-7 flex justify-between gap-4 items-center border-t border-white/10 pt-4 flex-col sm:flex-row"
-      >
-        <p class="m-0 text-white/80 text-sm">
-          © 2026 Struguraș de la Grigoraș. Toate drepturile rezervate.
-        </p>
-        <p class="m-0 text-white/80 text-sm text-right">
-          Consumul excesiv de alcool este dăunător sănătății.
-        </p>
-      </div>
-    </footer>
+    <Footer />
 
     <div id="mascot-wrapper">
       <img id="mascot" src="/images/mascot.svg" alt="Mascot" />
@@ -152,57 +43,64 @@ class="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-start md:grid-cols-3" styl
     </div>
 
     <script>
-      const toggle = document.getElementById("darkToggle");
-      const mobileToggle = document.getElementById("mobileDarkToggle");
-      const logo = document.getElementById("siteLogo");
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const close = document.getElementById("mobileMenuClose");
+      const toggle = document.getElementById("darkToggle") as HTMLButtonElement;
+      const mobileToggle = document.getElementById(
+        "mobileDarkToggle",
+      ) as HTMLButtonElement;
+      const logo = document.getElementById("siteLogo") as HTMLImageElement;
+      const menuToggle = document.getElementById(
+        "menuToggle",
+      ) as HTMLButtonElement;
+      const mobileMenu = document.getElementById("mobileMenu") as HTMLElement;
+      const close = document.getElementById(
+        "mobileMenuClose",
+      ) as HTMLButtonElement;
 
       function updateTheme() {
         const isDark = document.body.classList.contains("dark-mode");
 
         if (isDark) {
-          logo.src = "/images/logo_white.png";
+          if (logo) logo.src = "/images/logo_white.png";
           localStorage.setItem("theme", "dark");
-          toggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
-          mobileToggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
+          if (toggle) toggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
+          if (mobileToggle)
+            mobileToggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
         } else {
-          logo.src = "/images/logo_red.png";
+          if (logo) logo.src = "/images/logo_red.png";
           localStorage.setItem("theme", "light");
-          toggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
-          mobileToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+          if (toggle) toggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+          if (mobileToggle)
+            mobileToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
         }
       }
 
-      toggle.addEventListener("click", () => {
+      toggle?.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         updateTheme();
       });
 
-      mobileToggle.addEventListener("click", () => {
+      mobileToggle?.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         updateTheme();
       });
 
-      menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.add("open");
-        mobileMenu.removeAttribute("inert");
+      menuToggle?.addEventListener("click", () => {
+        mobileMenu?.classList.add("open");
+        mobileMenu?.removeAttribute("inert");
       });
 
-      close.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        mobileMenu.setAttribute("inert", "");
+      close?.addEventListener("click", () => {
+        mobileMenu?.classList.remove("open");
+        mobileMenu?.setAttribute("inert", "");
       });
 
-      mobileMenu.querySelectorAll(".mobile-nav-link").forEach((link) =>
+      mobileMenu?.querySelectorAll(".mobile-nav-link").forEach((link) =>
         link.addEventListener("click", () => {
-          mobileMenu.classList.remove("open");
-          mobileMenu.setAttribute("inert", "");
+          mobileMenu?.classList.remove("open");
+          mobileMenu?.setAttribute("inert", "");
         }),
       );
 
-      // Load saved theme
       if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
       } else if (
@@ -211,23 +109,20 @@ class="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-start md:grid-cols-3" styl
       ) {
         document.body.classList.add("dark-mode");
       }
-      updateTheme();
 
       updateTheme();
 
       (function () {
         const wrapper = document.getElementById("mascot-wrapper");
-        const img = document.getElementById("mascot");
+        const img = document.getElementById("mascot") as HTMLElement;
 
         if (!wrapper || !img) return;
 
         wrapper.addEventListener("click", () => {
-          // scroll to #contact
           const target = document.querySelector("#contact");
           if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
-          // small jump animation for attention
           img.style.animation = "mascot-jump .6s ease";
           setTimeout(
             () =>
@@ -237,32 +132,5 @@ class="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-start md:grid-cols-3" styl
         });
       })();
     </script>
-
-    <!-- <script>
-      let slideIndex = 0;
-      const slides = document.getElementsByClassName("event-img");
-
-      function showSlides(n) {
-        if (n >= slides.length) {
-          slideIndex = 0;
-        } else if (n < 0) {
-          slideIndex = slides.length - 1;
-        }
-
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slides[slideIndex].style.display = "block";
-      }
-
-      function plusSlides(n) {
-        slideIndex += n;
-        showSlides(slideIndex);
-      }
-
-      showSlides(slideIndex);
-
-      setInterval(() => plusSlides(1), 5000);
-    </script> -->
   </body>
 </html>
