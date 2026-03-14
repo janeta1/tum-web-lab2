@@ -8,6 +8,7 @@ import Events from "../components/Events.astro";
 import Gallery from "../components/Gallery.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import Mascot from "../components/Mascot.astro";
 ---
 
 <!doctype html>
@@ -34,13 +35,7 @@ import Footer from "../components/Footer.astro";
     </main>
 
     <Footer />
-
-    <div id="mascot-wrapper">
-      <img id="mascot" src="/images/mascot.svg" alt="Mascot" />
-      <div id="mascot-text">
-        Mesajul tău e ca un vin bun: abia aștept să-l descopăr!
-      </div>
-    </div>
+	<Mascot />
 
     <script>
       const toggle = document.getElementById("darkToggle") as HTMLButtonElement;
