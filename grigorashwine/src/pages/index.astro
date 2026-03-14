@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro'
 import About from '../components/About.astro'
 import Vineyard from '../components/Vineyard.astro'
 import Events from '../components/Events.astro'
+import Gallery from '../components/Gallery.astro'
 ---
 
 <!doctype html>
@@ -28,62 +29,7 @@ import Events from '../components/Events.astro'
       <About />
 	  <Vineyard />
 	  <Events />
-
-      <section id="gallery">
-        <div
-          class="gallery-all text-center py-8"
-          style="background-color: var(--white)"
-        >
-          <h2 class="text-4xl" style="color: var(--wine-red)">Galerie</h2>
-          <h3 class="text-lg" style="color: var(--text-muted)">
-            Povestea noastră în imagini
-          </h3>
-
-          <div class="gallery-content">
-            <div class="gallery-item">
-              <img src="/images/gl1.jpg" alt="gallery1" />
-              <div class="gallery-desc">
-                <p>Darul naturii în fiecare sticlă</p>
-              </div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="/images/gl2.jpg" alt="gallery1" />
-              <div class="gallery-desc">
-                <p>Creat cu grijă, prețuit cu dragoste</p>
-              </div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="/images/gl3.jpg" alt="gallery1" />
-              <div class="gallery-desc">
-                <p>Un gust al tradiției</p>
-              </div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="/images/gl4.jpg" alt="gallery1" />
-              <div class="gallery-desc">
-                <p>O poveste în fiecare picătură</p>
-              </div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="/images/gl5.jpg" alt="gallery1" />
-              <div class="gallery-desc">
-                <p>Momente de împărtășit</p>
-              </div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="/images/gl6.jpg" alt="gallery1" />
-              <div class="gallery-desc">
-                <p>Amintiri turnate în fiecare pahar</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+	  <Gallery />
 
       <section id="contact">
         <div class="contact-all">
