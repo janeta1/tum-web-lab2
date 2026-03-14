@@ -1,0 +1,853 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struguraș de la Grigoraș</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-brand">
+          <a href="#hero"
+            ><img
+              src="/images/logo_red.png"
+              alt="Grigoraș Wine Logo"
+              class="site-logo"
+              id="siteLogo"
+          /></a>
+          <a href="#hero" class="nav-link">Struguraș de la Grigoraș</a>
+        </div>
+        <div class="div-links">
+          <a href="#about">Despre noi</a>
+          <a href="#vineyard">Vinificație</a>
+          <a href="#events">Evenimente</a>
+          <a href="#gallery">Galerie</a>
+          <a href="#contact">Contactează-ne</a>
+          <button id="darkToggle" class="dark-toggle">
+            <i class="fa-regular fa-moon"></i>
+          </button>
+        </div>
+
+        <!-- Menu for mobile view -->
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Deschide meniul"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="mobile-menu" id="mobileMenu" inert>
+          <div class="mobile-menu-header">
+            <div class="mobile-menu-actions">
+              <button id="mobileDarkToggle" class="dark-toggle">
+                <i class="fa-regular fa-moon"></i>
+              </button>
+              <button
+                id="mobileMenuClose"
+                class="menu-close"
+                aria-label="Închide meniul"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mobile-nav">
+            <a href="#about" class="mobile-nav-link">Despre noi</a>
+            <a href="#vineyard" class="mobile-nav-link">Vinificație</a>
+            <a href="#events" class="mobile-nav-link">Evenimente</a>
+            <a href="#gallery" class="mobile-nav-link">Galerie</a>
+            <a href="#contact" class="mobile-nav-link">Contactează-ne</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-content">
+          <h1>Vin crescut cu grijă, savurat cu suflet</h1>
+          <p class="subtitle">
+            Din vie până în pahar, cu respect pentru tradiție
+          </p>
+
+          <div class="hero-cta">
+            <a
+              href="https://www.instagram.com/grigoraswine/"
+              target="_blank"
+              class="btn primary"
+              >Descoperă-ne pe Instagram</a
+            >
+            <a href="#contact" class="btn secondary">Vino la o degustare</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="/images/hero.jpg" alt="hero" />
+        </div>
+      </section>
+      <section id="about" class="py-16" style="background-color: var(--cream)">
+        <div
+          class="about-content flex items-center gap-16 max-w-5xl mx-auto flex-wrap"
+        >
+          <div
+            class="about-image flex justify-center items-center min-w-0 w-full md:w-auto md:flex-1"
+          >
+            <img
+              src="/images/about.jpg"
+              alt="about"
+              class="w-full md:w-[400px] md:min-w-[400px] md:max-w-[400px] rounded-lg border-4 border-gold shadow-lg transition-transform duration-200 hover:scale-[1.03]"
+              style="background-color: var(--white)"
+            />
+          </div>
+          <div
+            class="about-text min-w-[260px] max-w-[700px] text-[1.1em] leading-[1.7] px-[1.5em]"
+            style="color: var(--text-dark); flex: 2"
+          >
+            <h2
+              class="text-[2.5em] mb-[0.5em] relative"
+              style="color: var(--wine-red)"
+            >
+              O familie, un vin, o poveste
+            </h2>
+            <p class="mb-4">
+              Suntem o familie din Zgurița, Soroca, iar pentru noi vinul nu este
+              doar un produs, ci o parte din viața noastră. Am crescut printre
+              vii și am învățat că vinul bun se face cu timp, răbdare și respect
+              pentru natură. De la un an la altul, fiecare experiență a lăsat o
+              amprentă, construind ceea ce suntem astăzi.
+            </p>
+            <p class="mb-4">
+              Lucrăm în loturi mici, cu atenție la fiecare detaliu. Strugurii
+              sunt crescuți cu grijă, iar procesul de vinificație păstrează un
+              echilibru între tradiție și o abordare atentă, modernă. Credem în
+              vinul sincer, care spune povestea locului din care vine, fără
+              artificii.
+            </p>
+            <p class="mb-4">
+              Chipul de pe fiecare sticlă este un omagiu adus celui care a pus
+              prima cărămidă la temelia acestei povești. Astăzi, povestea
+              continuă în familie, cu aceeași pasiune și grijă pentru vie, vin
+              și lucrurile făcute cu suflet.
+            </p>
+          </div>
+          <p
+            class="about-end w-full max-w-2xl mx-auto text-lg italic text-center leading-relaxed -mt-10"
+            style="color: var(--text-muted)"
+          >
+            Struguraș de la Grigoraș înseamnă momente împărtășite, mese în
+            familie și bucuria lucrurilor simple, savurate încet, pahar cu
+            pahar.
+          </p>
+        </div>
+
+        <!-- Values cards -->
+        <div
+          class="about-values grid grid-cols-1 md:grid-cols-3 gap-10 mt-12 mx-auto px-6 max-w-6xl"
+        >
+          <!-- card 1 -->
+          <div
+            class="flex flex-col items-center text-center p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:scale-[1.03]"
+            style="background-color: var(--white)"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 aspect-square text-4xl rounded-full mb-4"
+              style="background: rgba(139, 44, 44, 0.1); color: var(--wine-red)"
+            >
+              <i class="fa-sharp fa-solid fa-heart"></i>
+            </div>
+            <h3 class="text-3xl mb-2" style="color: var(--wine-red)">
+              Pasiune
+            </h3>
+            <p style="color: var(--text-muted)">
+              Iubim ceea ce facem și se simte în fiecare pahar de vin
+            </p>
+          </div>
+
+          <!-- card 2 -->
+          <div
+            class="flex flex-col items-center text-center p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:scale-[1.03]"
+            style="background-color: var(--white)"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 aspect-square text-4xl rounded-full mb-4"
+              style="background: rgba(139, 44, 44, 0.1); color: var(--wine-red)"
+            >
+              <i class="fa-sharp fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="text-3xl mb-2" style="color: var(--wine-red)">
+              Familie
+            </h3>
+            <p style="color: var(--text-muted)">
+              O afacere de familie condusă cu grijă și dedicare
+            </p>
+          </div>
+
+          <!-- card 3 -->
+          <div
+            class="flex flex-col items-center text-center p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:scale-[1.03]"
+            style="background-color: var(--white)"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 aspect-square text-4xl rounded-full mb-4"
+              style="background: rgba(139, 44, 44, 0.1); color: var(--wine-red)"
+            >
+              <i class="fa-sharp fa-solid fa-award"></i>
+            </div>
+            <h3 class="text-3xl mb-2" style="color: var(--wine-red)">
+              Calitate
+            </h3>
+            <p style="color: var(--text-muted)">
+              Punem suflet în fiecare detaliu, ca gustul să fie adevărat
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="vineyard"
+        class="py-[4em]"
+        style="background-color: var(--white)"
+      >
+        <div class="vineyard-all max-w-[1100px] mx-auto items-center">
+          <h2
+            class="text-[2.5em] mb-[0.1em] text-center relative"
+            style="color: var(--wine-red)"
+          >
+            Vinificație
+          </h2>
+          <h3
+            class="text-[1.1em] leading-[1.7] px-[1.5em] max-w-[800px] mx-auto text-center"
+            style="color: var(--text-muted)"
+          >
+            De la vie la sticlă: procesul nostru de producție a vinului de
+            calitate
+          </h3>
+        </div>
+
+        <div
+          class="vineyard-content flex items-center gap-16 max-w-[1100px] mx-auto flex-wrap"
+        >
+          <div
+            class="vineyard-text min-w-[600px] text-[1.1em] leading-[1.7] pt-8"
+            style="color: var(--text-dark); flex: 1"
+          >
+            <p class="mb-[1.1em]">
+              La noi, vinul începe cu atenție și răbdare. Strugurii sunt culeși
+              cu mâna noastră, la momentul potrivit, și fiecare bob e privit cu
+              grijă, pentru ca fiecare sticlă să poarte ceva din sufletul
+              nostru. Ne place să lucrăm în loturi mici, unde fiecare pas
+              contează și nimic nu e lăsat la voia întâmplării.
+            </p>
+            <p class="mb-[1.1em]">
+              Fermentarea e un proces de observație și răbdare. Urmărim cum
+              mustul se transformă, cum aromele se adună și cum vinul își
+              găsește echilibrul. Nu grăbim lucrurile - îl lăsăm să evolueze în
+              ritmul lui, a aromele să se păstreze naturale și autentice. Ne
+              place să urmărim cum fiecare lot își găsește propriul caracter,
+              fără să forțăm lucrurile.
+            </p>
+            <p class="mb-[1.1em]">
+              Chiar dacă nu avem o podgorie mare, locul în care lucrăm ne
+              definește. Zgurița ne oferă un climat blând, cu zile însorite și
+              nopți răcoroase, care ajută strugurii să se coacă frumos și să
+              păstreze naturalețea lor. Aerul curat, pământul bogat și liniștea
+              satului se simt în vin, fără să fie nevoie să spunem prea multe.
+            </p>
+            <p class="mb-[1.1em]">
+              La final, vinul este maturat cu grijă și supravegheat constant.
+              Fiecare sticlă spune povestea noastră - a familiei, a muncii și a
+              grijii pentru detalii. E un vin făcut cu pasiune, simplu, sincer
+              și aproape de inimă.
+            </p>
+          </div>
+
+          <div
+            class="vineyard-image flex justify-center items-center max-w-full"
+            style="flex: 2"
+          >
+            <img
+              src="/images/vineyard.jpg"
+              alt="vineyard"
+              class="w-full max-w-full rounded-lg border-4 border-gold transition-transform duration-200 hover:scale-[1.03]"
+              style="
+                box-shadow: 0 4px 24px var(--border-light);
+                background-color: var(--white);
+              "
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="events"
+        class="py-[4em]"
+        style="background-color: var(--cream)"
+      >
+        <div class="events-all max-w-[1200px] mx-auto px-[1.5rem]">
+          <h2
+            class="text-[2.5em] mb-[0.1em] relative text-center"
+            style="color: var(--wine-red)"
+          >
+            Evenimente
+          </h2>
+          <h3
+            class="text-[1.1em] leading-[1.7] px-[1.5em] max-w-[800px] mx-auto text-center"
+            style="color: var(--text-muted)"
+          >
+            Momente memorabile petrecute împreună
+          </h3>
+
+          <div
+            class="events-content grid grid-cols-1 gap-8 mt-8 max-w-[1200px] mx-auto"
+          >
+            <div
+              class="event-card text-center rounded-[1.25rem] p-8 px-6"
+              style="
+                background-color: var(--white);
+                box-shadow: 0 4px 16px var(--shadow-soft);
+              "
+            >
+              <h4
+                class="text-[2rem] text-left mb-[0.7rem]"
+                style="color: var(--wine-red)"
+              >
+                Wine Grunge Party 2022
+              </h4>
+              <p
+                class="text-[1.1rem] text-left mb-4"
+                style="color: var(--text-muted)"
+              >
+                Wine Grunge Party de la Goldhaus a fost despre muzică, ritm și
+                vin bun. Pe 28 octombrie, alături de Petru Moiseev, show de tobe
+                și DJ, am petrecut o seară intensă, exact așa cum ne place, cu
+                vinurile Struguraș de la Grigoraș alături.
+              </p>
+              <div class="event-info">
+                <p
+                  class="text-[0.9rem] text-left mb-0"
+                  style="color: var(--wine-red)"
+                >
+                  <b>Data:</b> Octombrie 2022
+                </p>
+                <p
+                  class="text-[0.9rem] text-left mb-0"
+                  style="color: var(--wine-red)"
+                >
+                  <b>Locație:</b> Goldhaus Bier & Steakhaus
+                </p>
+              </div>
+              <h5
+                class="text-[1.5rem] text-center mt-4 mb-[-2rem]"
+                style="color: var(--wine-red)"
+              >
+                Galerie foto
+              </h5>
+              <div class="event-slideshow">
+                <div class="event-track">
+                  <ul class="content">
+                    <li>
+                      <img
+                        src="/images/gp1.jpg"
+                        alt="event1"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="/images/gp2.jpg"
+                        alt="event2"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="/images/gp3.jpg"
+                        alt="event3"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="/images/gp4.jpg"
+                        alt="event4"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="/images/gp5.jpg"
+                        alt="event5"
+                        class="event-img"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="/images/gp6.jpg"
+                        alt="event6"
+                        class="event-img"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="events-cta max-w-[1200px] w-full mx-auto my-8 px-[1.5rem] box-border"
+        >
+          <div
+            class="events-cta-text w-full text-center rounded-[1.25rem] p-8 px-6 box-border"
+            style="
+              background-color: var(--white);
+              box-shadow: 0 4px 16px var(--shadow-soft);
+            "
+          >
+            <h2 class="text-[1.5rem] mb-4" style="color: var(--wine-red)">
+              Vrei să participi la următorul eveniment?
+            </h2>
+            <p class="text-[1.1rem] mb-6" style="color: var(--text-muted)">
+              Urmărește-ne pe rețelele sociale pentru a afla despre viitoarele
+              degustări și evenimente speciale. Abia așteptăm să ne întâlnim și
+              să împărtășim momente frumoase în jurul unui pahar de vin bun!
+            </p>
+            <div class="events-cta-btns flex justify-center gap-4 flex-wrap">
+              <a
+                href="https://www.instagram.com/grigoraswine/"
+                target="_blank"
+                class="btn primary"
+                style="border-radius: 12px; width: 310px"
+                >Urmărește-ne pe Instagram</a
+              >
+              <a
+                href="https://www.facebook.com/grigorashwinery"
+                target="_blank"
+                class="btn primary"
+                style="border-radius: 12px; width: 310px"
+                >Urmărește-ne pe Facebook</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div
+          class="gallery-all text-center py-8"
+          style="background-color: var(--white)"
+        >
+          <h2 class="text-4xl" style="color: var(--wine-red)">Galerie</h2>
+          <h3 class="text-lg" style="color: var(--text-muted)">
+            Povestea noastră în imagini
+          </h3>
+
+          <div class="gallery-content">
+            <div class="gallery-item">
+              <img src="/images/gl1.jpg" alt="gallery1" />
+              <div class="gallery-desc">
+                <p>Darul naturii în fiecare sticlă</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="/images/gl2.jpg" alt="gallery1" />
+              <div class="gallery-desc">
+                <p>Creat cu grijă, prețuit cu dragoste</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="/images/gl3.jpg" alt="gallery1" />
+              <div class="gallery-desc">
+                <p>Un gust al tradiției</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="/images/gl4.jpg" alt="gallery1" />
+              <div class="gallery-desc">
+                <p>O poveste în fiecare picătură</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="/images/gl5.jpg" alt="gallery1" />
+              <div class="gallery-desc">
+                <p>Momente de împărtășit</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="/images/gl6.jpg" alt="gallery1" />
+              <div class="gallery-desc">
+                <p>Amintiri turnate în fiecare pahar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-all">
+          <h2>Contactează-ne</h2>
+          <h3>
+            Vino să ne vizitezi sau trimite-ne un mesaj. Te așteptăm cu drag!
+          </h3>
+
+          <div class="contact-content">
+            <div class="contact-card contact-info">
+              <h4>Informații de contact</h4>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i
+                      class="fa-solid fa-map-marker-alt"
+                      aria-hidden="true"
+                    ></i>
+                    <b>Adresă:</b>
+                  </p>
+                </div>
+                <p class="info-value">
+                  Strada Independenței 5, Zgurița, Soroca, Republica Moldova
+                </p>
+              </div>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <b>Telefon:</b>
+                  </p>
+                </div>
+                <p class="info-value">+373 0697 83 125</p>
+              </div>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <b>Email:</b>
+                  </p>
+                </div>
+                <p class="info-value">
+                  <a href="mailto:grigorashwinery@gmail.com" target="_blank"
+                    >contact@grigorashwinery.md</a
+                  >
+                </p>
+              </div>
+              <div class="info-item">
+                <div class="label">
+                  <p>
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                    <b>Program de vizitare:</b>
+                  </p>
+                </div>
+                <p class="info-value">
+                  Luni - Vineri: 10:00 - 18:00<br />Sâmbătă: 10:00 - 14:00<br />Duminică:
+                  Închis
+                </p>
+                <p class="info-note">
+                  *Vizitele ghidate necesită programare în avans.
+                </p>
+              </div>
+
+              <div class="divider" role="separator" aria-hidden="true"></div>
+              <p class="contact-quote">
+                "Vinul bun se savurează în companie bună. Așteptăm cu nerăbdare
+                să auzim de la tine!"
+              </p>
+            </div>
+
+            <div class="contact-card contact-form">
+              <h4>Trimite-ne un mesaj</h4>
+              <p>Completează formularul și îți vom răspunde în curând</p>
+              <form id="contact-details" action="#" method="post" novalidate>
+                <label for="name">Nume complet *:</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Ion Popescu"
+                  required
+                />
+
+                <label for="email">Email *:</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="ion.popescu@exemplu.com"
+                  required
+                />
+
+                <label for="phone">Telefon:</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+373 11 000 11"
+                />
+
+                <label for="message">Mesaj *:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Scrie-ne mesajul tău aici..."
+                  required
+                ></textarea>
+
+                <button type="button" class="btn primary" target="_blank">
+                  Trimite
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="py-12 px-6"
+      style="
+        background-color: var(--wine-dark);
+        color: rgba(255, 255, 255, 0.9);
+      "
+    >
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-start md:grid-cols-3"
+      >
+        <div>
+          <h3 class="text-2xl font-semibold mb-2">Struguraș de la Grigoraș</h3>
+          <p class="text-white/90 mb-2">
+            Vin de casă tradițional din inima Moldovei. Pasiune și grijă în
+            fiecare sticlă.
+          </p>
+          <div class="mt-4 flex gap-2">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              aria-label="Facebook"
+              class="inline-flex items-center justify-center w-12 h-12 bg-white/30 rounded-full text-white/90 text-2xl no-underline"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              aria-label="Instagram"
+              class="inline-flex items-center justify-center w-12 h-12 bg-white/30 rounded-full text-white/90 text-2xl no-underline"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="mailto:grigorashwinery@gmail.com"
+              aria-label="Email"
+              class="inline-flex items-center justify-center w-12 h-12 bg-white/30 rounded-full text-white/90 text-2xl no-underline"
+              ><i class="fa-regular fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+
+        <nav class="footer-nav block max-w-full box-border ml-8">
+          <h4 class="text-xl mb-3">Navigare</h4>
+          <ul class="list-none p-0 m-0 flex flex-col gap-2">
+            <li>
+              <a href="#hero" class="text-white/90 no-underline">→ Acasă</a>
+            </li>
+            <li>
+              <a href="#about" class="text-white/90 no-underline"
+                >→ Despre noi</a
+              >
+            </li>
+            <li>
+              <a href="#vineyard" class="text-white/90 no-underline"
+                >→ Vinificație</a
+              >
+            </li>
+            <li>
+              <a href="#events" class="text-white/90 no-underline"
+                >→ Evenimente</a
+              >
+            </li>
+            <li>
+              <a href="#gallery" class="text-white/90 no-underline"
+                >→ Galerie</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="text-white/90 no-underline"
+                >→ Contactează-ne</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+          <h4 class="text-xl mb-3">Contactează-ne</h4>
+          <div class="flex gap-2 items-start my-2">
+            <i class="fa-solid fa-location-dot text-white/90 w-7"></i>
+            <div class="text-white/90">
+              Strada Independenței 5, Zgurița, Soroca,<br />Republica Moldova
+            </div>
+          </div>
+          <div class="flex gap-2 items-start my-2">
+            <i class="fa-solid fa-phone text-white/90 w-7"></i>
+            <div class="text-white/90">+373 60 123 456</div>
+          </div>
+          <div class="flex gap-2 items-start my-2">
+            <i class="fa-regular fa-envelope text-white/90 w-7"></i>
+            <div class="text-white/90">
+              <a
+                href="mailto:grigorashwinery@gmail.com"
+                class="text-white/90 no-underline"
+                >grigorashwinery@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto mt-7 flex justify-between gap-4 items-center border-t border-white/10 pt-4 flex-col sm:flex-row"
+      >
+        <p class="m-0 text-white/80 text-sm">
+          © 2026 Struguraș de la Grigoraș. Toate drepturile rezervate.
+        </p>
+        <p class="m-0 text-white/80 text-sm text-right">
+          Consumul excesiv de alcool este dăunător sănătății.
+        </p>
+      </div>
+    </footer>
+
+    <div id="mascot-wrapper">
+      <img id="mascot" src="/images/mascot.svg" alt="Mascot" />
+      <div id="mascot-text">
+        Mesajul tău e ca un vin bun: abia aștept să-l descopăr!
+      </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("darkToggle");
+      const mobileToggle = document.getElementById("mobileDarkToggle");
+      const logo = document.getElementById("siteLogo");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const close = document.getElementById("mobileMenuClose");
+
+      function updateTheme() {
+        const isDark = document.body.classList.contains("dark-mode");
+
+        if (isDark) {
+          logo.src = "/images/logo_white.png";
+          localStorage.setItem("theme", "dark");
+          toggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
+          mobileToggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
+        } else {
+          logo.src = "/images/logo_red.png";
+          localStorage.setItem("theme", "light");
+          toggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+          mobileToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
+        }
+      }
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        updateTheme();
+      });
+
+      mobileToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        updateTheme();
+      });
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("open");
+        mobileMenu.removeAttribute("inert");
+      });
+
+      close.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        mobileMenu.setAttribute("inert", "");
+      });
+
+      mobileMenu.querySelectorAll(".mobile-nav-link").forEach((link) =>
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          mobileMenu.setAttribute("inert", "");
+        }),
+      );
+
+      // Load saved theme
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      } else if (
+        !localStorage.getItem("theme") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.body.classList.add("dark-mode");
+      }
+      updateTheme();
+
+      updateTheme();
+
+      (function () {
+        const wrapper = document.getElementById("mascot-wrapper");
+        const img = document.getElementById("mascot");
+
+        if (!wrapper || !img) return;
+
+        wrapper.addEventListener("click", () => {
+          // scroll to #contact
+          const target = document.querySelector("#contact");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          // small jump animation for attention
+          img.style.animation = "mascot-jump .6s ease";
+          setTimeout(
+            () =>
+              (img.style.animation = "mascot-float 4s ease-in-out infinite"),
+            700,
+          );
+        });
+      })();
+    </script>
+
+    <!-- <script>
+      let slideIndex = 0;
+      const slides = document.getElementsByClassName("event-img");
+
+      function showSlides(n) {
+        if (n >= slides.length) {
+          slideIndex = 0;
+        } else if (n < 0) {
+          slideIndex = slides.length - 1;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+      }
+
+      function plusSlides(n) {
+        slideIndex += n;
+        showSlides(slideIndex);
+      }
+
+      showSlides(slideIndex);
+
+      setInterval(() => plusSlides(1), 5000);
+    </script> -->
+  </body>
+</html>
