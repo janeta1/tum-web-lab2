@@ -983,6 +983,7 @@ footer p, footer a, footer li, footer div {
     width: 100%;
     box-sizing: border-box;
     padding: 0 2.5rem;
+    padding-top: 1.5rem;
   }
 
   .vineyard-text p {
