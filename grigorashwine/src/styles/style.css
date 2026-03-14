@@ -803,6 +803,21 @@ nav {
   resize: vertical;
 }
 
+footer {
+  color: #ffffff !important;
+}
+
+footer p, footer a, footer li, footer div {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.footer-nav {
+  display: block;
+  margin-left: 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 @media (min-width: 900px) {
   .contact-content {
     grid-template-columns: 1fr 2fr;
@@ -1140,3 +1155,4 @@ nav {
     line-height: 1.3;
   }
 }
+
