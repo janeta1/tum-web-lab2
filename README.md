@@ -143,3 +143,33 @@ Check the live landing page here: [Struguraș de la Grigoraș](https://janeta1.g
     <img src="screenshots/desktop_light.png" alt="Hero Section - Light Mode" width="45%" />
     <img src="screenshots/desktop_dark.png" alt="Hero Section - Dark Mode" width="45%" />
 </p>
+
+---
+
+## 🚀 Lab 4 - Static Site Generator & Git CMS
+
+### ⚡ Static Site Generator — Astro
+
+- Migrated landing page from plain HTML/CSS to Astro SSG
+- Split page into reusable components: Header, Hero, About, Vineyard, Events, Gallery, Contact, Footer, Mascot
+- Created Layout component for shared HTML structure, scripts, and global styles
+- TailwindCSS integrated properly via `@tailwindcss/vite` plugin
+- Content collections configured for dynamic event rendering
+
+### 📝 Git-based CMS — Decap CMS
+
+- Integrated Decap CMS with Netlify Identity and Git Gateway
+- All major sections editable via CMS at `/admin`:
+  - **Hero** — title, subtitle, background image
+  - **Despre noi** — heading, paragraphs (add/remove), quote, image
+  - **Vinificație** — heading, subtitle, paragraphs (add/remove), image
+  - **Contact** — address, phone, email, hours
+  - **Galerie** — images and captions (add/remove)
+  - **Evenimente** — full control: add, edit, delete events with title, date, location, description, and photos
+- Content stored as JSON and Markdown files in the repository
+- Changes made via CMS trigger automatic Netlify redeploy
+
+### 🌐 Live Demo
+
+- Site: [Struguraș de la Grigoraș](https://grigorashwine.netlify.app/)
+- CMS Admin: [/admin](https://grigorashwine.netlify.app/admin)
