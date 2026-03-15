@@ -1,3 +1,7 @@
+---
+import about from "../content/about.json";
+---
+
 <section id="about" class="py-16" style="background-color: var(--cream)">
   <div
     class="about-content flex items-center gap-16 max-w-5xl mx-auto flex-wrap"
@@ -6,7 +10,7 @@
       class="about-image flex justify-center items-center min-w-0 w-full md:w-auto md:flex-1"
     >
       <img
-        src="/images/about.jpg"
+        src={about.image}
         alt="about"
         class="w-full md:w-[400px] md:min-w-[400px] md:max-w-[400px] rounded-lg shadow-lg transition-transform duration-200 hover:scale-[1.03]"
         style="background-color: var(--white)"
@@ -20,34 +24,15 @@
         class="text-[2.5em] mb-[0.5em] relative"
         style="color: var(--wine-red)"
       >
-        O familie, un vin, o poveste
+        {about.heading}
       </h2>
-      <p class="mb-4">
-        Suntem o familie din Zgurița, Soroca, iar pentru noi vinul nu este doar
-        un produs, ci o parte din viața noastră. Am crescut printre vii și am
-        învățat că vinul bun se face cu timp, răbdare și respect pentru natură.
-        De la un an la altul, fiecare experiență a lăsat o amprentă, construind
-        ceea ce suntem astăzi.
-      </p>
-      <p class="mb-4">
-        Lucrăm în loturi mici, cu atenție la fiecare detaliu. Strugurii sunt
-        crescuți cu grijă, iar procesul de vinificație păstrează un echilibru
-        între tradiție și o abordare atentă, modernă. Credem în vinul sincer,
-        care spune povestea locului din care vine, fără artificii.
-      </p>
-      <p class="mb-4">
-        Chipul de pe fiecare sticlă este un omagiu adus celui care a pus prima
-        cărămidă la temelia acestei povești. Astăzi, povestea continuă în
-        familie, cu aceeași pasiune și grijă pentru vie, vin și lucrurile făcute
-        cu suflet.
-      </p>
+      {about.paragraphs.map((paragraph) => <p class="mb-4">{paragraph}</p>)}
     </div>
     <p
       class="about-end w-full max-w-2xl mx-auto text-lg italic text-center leading-relaxed -mt-10"
       style="color: var(--text-muted)"
     >
-      Struguraș de la Grigoraș înseamnă momente împărtășite, mese în familie și
-      bucuria lucrurilor simple, savurate încet, pahar cu pahar.
+      {about.quote}
     </p>
   </div>
 

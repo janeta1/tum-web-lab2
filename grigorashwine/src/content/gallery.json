@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "image": "/images/gl1.jpg", "caption": "Darul naturii în fiecare sticlă" },
+    { "image": "/images/gl2.jpg", "caption": "Creat cu grijă, prețuit cu dragoste" },
+    { "image": "/images/gl3.jpg", "caption": "Un gust al tradiției" },
+    { "image": "/images/gl4.jpg", "caption": "O poveste în fiecare picătură" },
+    { "image": "/images/gl5.jpg", "caption": "Momente de împărtășit" },
+    { "image": "/images/gl6.jpg", "caption": "Amintiri turnate în fiecare pahar" }
+  ]
+}
