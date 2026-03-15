@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
@@ -11,121 +11,14 @@ import Footer from "../components/Footer.astro";
 import Mascot from "../components/Mascot.astro";
 ---
 
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Struguraș de la Grigoraș</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <Hero />
-      <About />
-      <Vineyard />
-      <Events />
-      <Gallery />
-      <Contact />
-    </main>
-
-    <Footer />
-	<Mascot />
-
-    <script>
-      const toggle = document.getElementById("darkToggle") as HTMLButtonElement;
-      const mobileToggle = document.getElementById(
-        "mobileDarkToggle",
-      ) as HTMLButtonElement;
-      const logo = document.getElementById("siteLogo") as HTMLImageElement;
-      const menuToggle = document.getElementById(
-        "menuToggle",
-      ) as HTMLButtonElement;
-      const mobileMenu = document.getElementById("mobileMenu") as HTMLElement;
-      const close = document.getElementById(
-        "mobileMenuClose",
-      ) as HTMLButtonElement;
-
-      function updateTheme() {
-        const isDark = document.body.classList.contains("dark-mode");
-
-        if (isDark) {
-          if (logo) logo.src = "/images/logo_white.png";
-          localStorage.setItem("theme", "dark");
-          if (toggle) toggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
-          if (mobileToggle)
-            mobileToggle.innerHTML = '<i class="fa-regular fa-sun"></i>';
-        } else {
-          if (logo) logo.src = "/images/logo_red.png";
-          localStorage.setItem("theme", "light");
-          if (toggle) toggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
-          if (mobileToggle)
-            mobileToggle.innerHTML = '<i class="fa-regular fa-moon"></i>';
-        }
-      }
-
-      toggle?.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        updateTheme();
-      });
-
-      mobileToggle?.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        updateTheme();
-      });
-
-      menuToggle?.addEventListener("click", () => {
-        mobileMenu?.classList.add("open");
-        mobileMenu?.removeAttribute("inert");
-      });
-
-      close?.addEventListener("click", () => {
-        mobileMenu?.classList.remove("open");
-        mobileMenu?.setAttribute("inert", "");
-      });
-
-      mobileMenu?.querySelectorAll(".mobile-nav-link").forEach((link) =>
-        link.addEventListener("click", () => {
-          mobileMenu?.classList.remove("open");
-          mobileMenu?.setAttribute("inert", "");
-        }),
-      );
-
-      if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-      } else if (
-        !localStorage.getItem("theme") &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-      ) {
-        document.body.classList.add("dark-mode");
-      }
-
-      updateTheme();
-
-      (function () {
-        const wrapper = document.getElementById("mascot-wrapper");
-        const img = document.getElementById("mascot") as HTMLElement;
-
-        if (!wrapper || !img) return;
-
-        wrapper.addEventListener("click", () => {
-          const target = document.querySelector("#contact");
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-          img.style.animation = "mascot-jump .6s ease";
-          setTimeout(
-            () =>
-              (img.style.animation = "mascot-float 4s ease-in-out infinite"),
-            700,
-          );
-        });
-      })();
-    </script>
-  </body>
-</html>
+<Layout>
+  <Header />
+  <Hero />
+  <About />
+  <Vineyard />
+  <Events />
+  <Gallery />
+  <Contact />
+  <Footer />
+  <Mascot />
+</Layout>
