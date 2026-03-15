@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: "public/images"
+media_folder: "grigorashwine/public/images"
 public_folder: "/images"
 
 collections:
@@ -11,7 +11,7 @@ collections:
     files:
       - name: "hero"
         label: "Hero"
-        file: "src/content/hero.json"
+        file: "grigorashwine/src/content/hero.json"
         fields:
           - { name: "title", label: "Titlu principal", widget: "string" }
           - { name: "subtitle", label: "Subtitlu", widget: "string" }
@@ -19,7 +19,7 @@ collections:
 
       - name: "about"
         label: "Despre noi"
-        file: "src/content/about.json"
+        file: "grigorashwine/src/content/about.json"
         fields:
           - { name: "heading", label: "Titlu", widget: "string" }
           - name: "paragraphs"
@@ -31,7 +31,7 @@ collections:
 
       - name: "vineyard"
         label: "Vinificație"
-        file: "src/content/vineyard.json"
+        file: "grigorashwine/src/content/vineyard.json"
         fields:
           - { name: "heading", label: "Titlu", widget: "string" }
           - { name: "subtitle", label: "Subtitlu", widget: "string" }
@@ -43,7 +43,7 @@ collections:
 
       - name: "contact"
         label: "Contact"
-        file: "src/content/contact.json"
+        file: "grigorashwine/src/content/contact.json"
         fields:
           - { name: "address", label: "Adresă", widget: "string" }
           - { name: "phone", label: "Telefon", widget: "string" }
@@ -52,7 +52,7 @@ collections:
 
       - name: "gallery"
         label: "Galerie"
-        file: "src/content/gallery.json"
+        file: "grigorashwine/src/content/gallery.json"
         fields:
           - name: "items"
             label: "Imagini"
@@ -63,7 +63,7 @@ collections:
 
   - name: "events"
     label: "Evenimente"
-    folder: "src/content/events"
+    folder: "grigorashwine/src/content/events"
     create: true
     delete: true
     slug: "{{slug}}"
