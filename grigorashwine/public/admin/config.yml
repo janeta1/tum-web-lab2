@@ -1,0 +1,78 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Setări site"
+    files:
+      - name: "hero"
+        label: "Hero"
+        file: "src/content/hero.json"
+        fields:
+          - { name: "title", label: "Titlu principal", widget: "string" }
+          - { name: "subtitle", label: "Subtitlu", widget: "string" }
+          - { name: "image", label: "Imagine hero", widget: "image" }
+
+      - name: "about"
+        label: "Despre noi"
+        file: "src/content/about.json"
+        fields:
+          - { name: "heading", label: "Titlu", widget: "string" }
+          - name: "paragraphs"
+            label: "Paragrafe"
+            widget: "list"
+            field: { name: "paragraph", label: "Paragraf", widget: "text" }
+          - { name: "quote", label: "Citat final", widget: "text" }
+          - { name: "image", label: "Imagine", widget: "image" }
+
+      - name: "vineyard"
+        label: "Vinificație"
+        file: "src/content/vineyard.json"
+        fields:
+          - { name: "heading", label: "Titlu", widget: "string" }
+          - { name: "subtitle", label: "Subtitlu", widget: "string" }
+          - name: "paragraphs"
+            label: "Paragrafe"
+            widget: "list"
+            field: { name: "paragraph", label: "Paragraf", widget: "text" }
+          - { name: "image", label: "Imagine", widget: "image" }
+
+      - name: "contact"
+        label: "Contact"
+        file: "src/content/contact.json"
+        fields:
+          - { name: "address", label: "Adresă", widget: "string" }
+          - { name: "phone", label: "Telefon", widget: "string" }
+          - { name: "email", label: "Email", widget: "string" }
+          - { name: "hours", label: "Program", widget: "text" }
+
+      - name: "gallery"
+        label: "Galerie"
+        file: "src/content/gallery.json"
+        fields:
+          - name: "items"
+            label: "Imagini"
+            widget: "list"
+            fields:
+              - { name: "image", label: "Imagine", widget: "image" }
+              - { name: "caption", label: "Descriere", widget: "string" }
+
+  - name: "events"
+    label: "Evenimente"
+    folder: "src/content/events"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Titlu", widget: "string" }
+      - { name: "date", label: "Data", widget: "string" }
+      - { name: "location", label: "Locație", widget: "string" }
+      - { name: "description", label: "Descriere", widget: "text" }
+      - name: "photos"
+        label: "Poze"
+        widget: "list"
+        field: { name: "photo", label: "Poză", widget: "image" }

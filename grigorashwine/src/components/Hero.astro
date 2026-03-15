@@ -1,7 +1,11 @@
+---
+import hero from '../content/hero.json';
+---
+
 <section id="hero">
   <div class="hero-content">
-    <h1>Vin crescut cu grijă, savurat cu suflet</h1>
-    <p class="subtitle">Din vie până în pahar, cu respect pentru tradiție</p>
+    <h1>{hero.title}</h1>
+    <p class="subtitle">{hero.subtitle}</p>
 
     <div class="hero-cta">
       <a
@@ -14,6 +18,6 @@
   </div>
 
   <div class="hero-image">
-    <img src="/images/hero.jpg" alt="hero" />
+    <img src={hero.image} alt="hero" />
   </div>
 </section>
