@@ -5,6 +5,9 @@ import "../styles/global.css";
 <!doctype html>
 <html>
   <head>
+    <script
+      src="https://unpkg.com/netlify-identity-widget@1/build/netlify-identity-widget.js"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Struguraș de la Grigoraș</title>
@@ -16,6 +19,28 @@ import "../styles/global.css";
   </head>
   <body>
     <slot />
+
+    <script>
+      // @ts-nocheck
+      window.addEventListener("load", function () {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+
+          if (
+            window.location.hash &&
+            window.location.hash.includes("recovery_token")
+          ) {
+            window.netlifyIdentity.open();
+          }
+        }
+      });
+    </script>
 
     <script>
       const toggle = document.getElementById("darkToggle") as HTMLButtonElement;
