@@ -10,6 +10,8 @@
   --text-dark: #2c2018;
   --text-muted: #6b5d52;
 
+  --green: #1a5c35;
+
   --border-light: rgba(122, 26, 26, 0.12);
   --shadow-soft: rgba(44, 32, 24, 0.08);
 }
@@ -22,6 +24,7 @@ body.dark-mode {
   --gold: #e0b97a;
   --text-dark: #f3e6d8;
   --text-muted: #bfa58a;
+  --green: #4caf50;
   --border-light: rgba(224, 185, 122, 0.13);
   --shadow-soft: rgba(44, 32, 24, 0.45);
 }

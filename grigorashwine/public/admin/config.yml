@@ -69,7 +69,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { name: "title", label: "Titlu", widget: "string" }
-      - { name: "date", label: "Data", widget: "string" }
+      - { name: "date", label: "Data", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD-MM-YYYY", time_format: false }
       - { name: "location", label: "Locație", widget: "string" }
       - { name: "description", label: "Descriere", widget: "text" }
       - name: "photos"

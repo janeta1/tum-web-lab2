@@ -1,58 +1,127 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const events = await getCollection('events');
+const events = await getCollection("events");
+
+const sortedEvents = events.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+function getEventStatus(dateStr: string) {
+  const eventDate = new Date(dateStr);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  eventDate.setHours(0, 0, 0, 0);
+
+  if (eventDate.getTime() === today.getTime()) return "today";
+  if (eventDate < today) return "past";
+  return "upcoming";
+}
 ---
 
 <section id="events" class="py-[4em]" style="background-color: var(--cream)">
   <div class="events-all max-w-[1200px] mx-auto px-[1.5rem]">
-    <h2 class="text-[2.5em] mb-[0.1em] relative text-center" style="color: var(--wine-red)">
+    <h2
+      class="text-[2.5em] mb-[0.1em] relative text-center"
+      style="color: var(--wine-red)"
+    >
       Evenimente
     </h2>
-    <h3 class="text-[1.1em] leading-[1.7] px-[1.5em] max-w-[800px] mx-auto text-center" style="color: var(--text-muted)">
+    <h3
+      class="text-[1.1em] leading-[1.7] px-[1.5em] max-w-[800px] mx-auto text-center"
+      style="color: var(--text-muted)"
+    >
       Momente memorabile petrecute împreună
     </h3>
 
-    <div class="events-content grid grid-cols-1 gap-8 mt-8 max-w-[1200px] mx-auto">
-      {events.map((event) => (
-        <div
-          class="event-card text-center rounded-[1.25rem] p-8 px-6"
-          style="background-color: var(--white); box-shadow: 0 4px 16px var(--shadow-soft);"
-        >
-          <h4 class="text-[2rem] text-left mb-[0.7rem]" style="color: var(--wine-red)">
-            {event.data.title}
-          </h4>
-          <p class="text-[1.1rem] text-left mb-4" style="color: var(--text-muted)">
-            {event.data.description}
-          </p>
-          <div class="event-info">
-            <p class="text-[0.9rem] text-left mb-0" style="color: var(--wine-red)">
-              <b>Data:</b> {event.data.date}
+    <div
+      class="events-content grid grid-cols-1 gap-8 mt-8 max-w-[1200px] mx-auto"
+    >
+      {
+        sortedEvents.map((event) => (
+          <div
+            class="event-card text-center rounded-[1.25rem] p-8 px-6"
+            style="background-color: var(--white); box-shadow: 0 4px 16px var(--shadow-soft);"
+          >
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.7rem; flex-wrap: wrap;">
+              <h4
+                class="text-[2rem] text-left"
+                style="color: var(--wine-red); margin: 0"
+              >
+                {event.data.title}
+              </h4>
+              {(() => {
+                const status = getEventStatus(event.data.date);
+                if (status === "past")
+                  return (
+                    <span style="background-color: var(--gold); color: var(--cream); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 999px; font-family: sans-serif; white-space: nowrap;">
+                      Eveniment trecut
+                    </span>
+                  );
+                if (status === "today")
+                  return (
+                    <span style="background-color: var(--wine-red); color: var(--cream); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 999px; font-family: sans-serif; white-space: nowrap;">
+                      Astăzi
+                    </span>
+                  );
+                if (status === "upcoming")
+                  return (
+                    <span style="background-color: var(--green); color: var(--cream); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 999px; font-family: sans-serif; white-space: nowrap;">
+                      În curând
+                    </span>
+                  );
+              })()}
+            </div>
+            <p
+              class="text-[1.1rem] text-left mb-4"
+              style="color: var(--text-muted)"
+            >
+              {event.data.description}
             </p>
-            <p class="text-[0.9rem] text-left mb-0" style="color: var(--wine-red)">
-              <b>Locație:</b> {event.data.location}
-            </p>
-          </div>
-          <h5 class="text-[1.5rem] text-center mt-4 mb-[-2rem]" style="color: var(--wine-red)">
-            Galerie foto
-          </h5>
-          <div class="event-slideshow">
-            <div class="event-track">
-              <ul class="content">
-                {event.data.photos.map((photo) => (
-                  <li>
-                    <img src={photo} alt={event.data.title} class="event-img" />
-                  </li>
-                ))}
-              </ul>
+            <div class="event-info">
+              <p
+                class="text-[0.9rem] text-left mb-0"
+                style="color: var(--wine-red)"
+              >
+                <b>Data:</b> {event.data.date}
+              </p>
+              <p
+                class="text-[0.9rem] text-left mb-0"
+                style="color: var(--wine-red)"
+              >
+                <b>Locație:</b> {event.data.location}
+              </p>
+            </div>
+            <h5
+              class="text-[1.5rem] text-center mt-4 mb-[-2rem]"
+              style="color: var(--wine-red)"
+            >
+              Galerie foto
+            </h5>
+            <div class="event-slideshow">
+              <div class="event-track">
+                <ul class="content">
+                  {event.data.photos.map((photo) => (
+                    <li>
+                      <img
+                        src={photo}
+                        alt={event.data.title}
+                        class="event-img"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 
-  <div class="events-cta max-w-[1200px] w-full mx-auto my-8 px-[1.5rem] box-border">
+  <div
+    class="events-cta max-w-[1200px] w-full mx-auto my-8 px-[1.5rem] box-border"
+  >
     <div
       class="events-cta-text w-full text-center rounded-[1.25rem] p-8 px-6 box-border"
       style="background-color: var(--white); box-shadow: 0 4px 16px var(--shadow-soft);"
@@ -61,13 +130,24 @@ const events = await getCollection('events');
         Vrei să participi la următorul eveniment?
       </h2>
       <p class="text-[1.1rem] mb-6" style="color: var(--text-muted)">
-        Urmărește-ne pe rețelele sociale pentru a afla despre viitoarele degustări și evenimente speciale.
+        Urmărește-ne pe rețelele sociale pentru a afla despre viitoarele
+        degustări și evenimente speciale.
       </p>
       <div class="events-cta-btns flex justify-center gap-4 flex-wrap">
-        <a href="https://www.instagram.com/grigoraswine/" target="_blank" class="btn primary" style="border-radius: 12px; width: 310px">
+        <a
+          href="https://www.instagram.com/grigoraswine/"
+          target="_blank"
+          class="btn primary"
+          style="border-radius: 12px; width: 310px"
+        >
           Urmărește-ne pe Instagram
         </a>
-        <a href="https://www.facebook.com/grigorashwinery" target="_blank" class="btn primary" style="border-radius: 12px; width: 310px">
+        <a
+          href="https://www.facebook.com/grigorashwinery"
+          target="_blank"
+          class="btn primary"
+          style="border-radius: 12px; width: 310px"
+        >
           Urmărește-ne pe Facebook
         </a>
       </div>

@@ -1,6 +1,6 @@
 ---
 title: Wine Party 2026
-date: 13 martie 2026
+date: 16 martie 2026
 location: Goldhaus Bier & Steakhaus
 description: A doua ediție a Wine Grunge Party a depășit toate așteptările. Pe
   15 martie, alături de Petru Moiseev și o nouă distribuție de artiști, am
